@@ -1,406 +1,432 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arirang by BTS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arirang by BTS</title>
 
-<style>
+    <style>
 
-html{
-    scroll-behavior: smooth;
-}
+    html{
+        scroll-behavior: smooth;
+    }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
 
-body{
-    background:#d9d9d9;
-    padding-top: 40px;
-}
+    body{
+        background:#d9d9d9;
+        padding-top: 40px;
+    }
 
-.container{
-    width:100%;
-    min-height:100vh;
-    background:black;
-}
+    .container{
+        width:100%;
+        min-height:100vh;
+        background:black;
+    }
 
-nav{
-    background:white;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 40px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-}
+    nav{
+        background:white;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:15px 40px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
 
-.nav-links{
-    display:flex;
-    gap:40px;
-}
+    .nav-links{
+        display:flex;
+        gap:40px;
+    }
 
-.nav-links a{
-    text-decoration:none;
-    color:black;
-    font-size:12px;
-    font-weight:bold;
-    letter-spacing:2px;
-}
+    .nav-links a{
+        text-decoration:none;
+        color:black;
+        font-size:12px;
+        font-weight:bold;
+        letter-spacing:2px;
+    }
 
-.logo{
-    width:120px;
-    height:50px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
+    .logo{
+        width:120px;
+        height:50px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
 
-.logo img{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-}
+    .logo img{
+        width:100%;
+        height:100%;
+        object-fit:contain;
+    }
 
-.hero{
-    width:100%;
-    height:300px;
-    background:#ffffff;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:#ffffff;
-    font-size:24px;
-    font-weight:bold;
-}
+    .hero{
+        width:100%;
+        height:300px;
+        background:#ffffff;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        color:#ffffff;
+        font-size:24px;
+        font-weight:bold;
+    }
 
-#cover{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-}
+    #cover{
+        width:100%;
+        height:100%;
+        object-fit:contain;
+    }
 
-.stream{
-    background:#e4002b;
-    color:white;
-    text-align:center;
-    padding:15px;
-}
+    .stream{
+        background:#e4002b;
+        color:white;
+        text-align:center;
+        padding:15px;
+    }
 
-.stream h2{
-    margin-bottom:15px;
-}
+    .stream h2{
+        margin-bottom:15px;
+    }
 
-.platforms{
-    display:flex;
-    justify-content:space-evenly;
-    flex-wrap:wrap;
-}
+    .platforms{
+        display:flex;
+        justify-content:space-evenly;
+        flex-wrap:wrap;
+    }
 
-.platforms p{
-    font-weight:bold;
-}
+    .platforms p{
+        font-weight:bold;
+    }
 
-.about{
-    background:black;
-    color:#ffffff;
-    padding:40px;
-    font-size: 60px;
-}
+    .about{
+        background:black;
+        color:#ffffff;
+        padding:40px;
+        font-size: 60px;
+    }
 
-section{
-    scroll-margin-top: 80px;
-}
+    section{
+        scroll-margin-top: 80px;
+    }
 
-.section-title{
-    text-align:center;
-    font-size: 30px;
-    margin-bottom:40px;
-    font-weight:bold;
-}
+    .section-title{
+        text-align:center;
+        font-size: 30px;
+        margin-bottom:40px;
+        font-weight:bold;
+    }
 
-.about-content{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:40px;
-}
+    .about-content{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        gap:40px;
+    }
 
-.about-text{
-    width: 55%;
-}
+    .about-text{
+        width: 55%;
+    }
 
-.about-text h1{
-    color:#e4002b;
-    margin-bottom:15px;
-    font-size: 48px;
-}
+    .about-text h1{
+        color:#e4002b;
+        margin-bottom:15px;
+        font-size: 48px;
+    }
 
-.about-text p{
-    font-size:13px;
-    line-height:1.6;
-}
+    .about-text p{
+        font-size:13px;
+        line-height:1.6;
+    }
 
-.vinyl{
-    background:#000000;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:#000000;
-    font-weight:bold;
-}
+    .bandlist{
+        color:#e4002b;
+    }
 
-.listen{
-    background:#8d001e;
-    padding:40px;
-}
+    .about-text ul{
+        font-size:13px;
+        line-height:1.6;
+        margin-left:20px;
+        margin-top:5px;
+    }
 
-.listen h2{
-    color:white;
-    text-align:center;
-    margin-bottom:30px;
-}
+    .about-text li{
+        margin-bottom:2px;
+    }
 
-.title{
-    color: rgb(156, 156, 156);
-    margin-left: 210px; 
-}
+    .vinyl{
+        background:#000000;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        color:#000000;
+        font-weight:bold;
+    }
 
-.video{
-    width: auto;
-    height: auto;
-    background:#8d001e;
-    margin:auto;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:24px;
-    font-weight:bold;
-}
+    .listen{
+        background:#8d001e;
+        padding:40px;
+    }
 
-.tour{
-    background:black;
-    color:white;
-    padding:40px;
-}
+    .listen h2{
+        color:white;
+        text-align:center;
+        margin-bottom:30px;
+    }
 
-.tour h2{
-    text-align:center;
-    margin-bottom:40px;
-}
+    .title{
+        color: rgb(156, 156, 156);
+        margin-left: 210px; 
+    }
 
-.tour-header{
-    display:grid;
-    grid-template-columns:1fr 2fr 1fr;
-    margin-bottom:20px;
-    font-size:13px;
-}
+    .video{
+        width: auto;
+        height: auto;
+        background:#8d001e;
+        margin:auto;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        font-size:24px;
+        font-weight:bold;
+    }
 
-.tour-row{
-    display:grid;
-    grid-template-columns:1fr 2fr 1fr;
-    align-items:center;
-    padding:20px 0;
-    border-top:1px solid #444;
-}
+    .tour{
+        background:black;
+        color:white;
+        padding:40px;
+    }
 
-.date{
-    font-size:26px;
-    font-weight:bold;
-    letter-spacing:2px;
-}
+    .tour h2{
+        text-align:center;
+        margin-bottom:40px;
+    }
 
-.location{
-    font-size:22px;
-}
+    .tour-header{
+        display:grid;
+        grid-template-columns:1fr 2fr 1fr;
+        margin-bottom:20px;
+        font-size:13px;
+    }
 
-.location small{
-    display:block;
-    color:#bbb;
-    margin-top:5px;
-}
+    .tour-row{
+        display:grid;
+        grid-template-columns:1fr 2fr 1fr;
+        align-items:center;
+        padding:20px 0;
+        border-top:1px solid #444;
+    }
 
-.ticket-btn{
-    width:140px;
-    padding:10px;
-    background:transparent;
-    border:2px solid #e4002b;
-    border-radius:10px;
-    color:white;
-    font-size:18px;
-    cursor:pointer;
-}
+    .date{
+        font-size:26px;
+        font-weight:bold;
+        letter-spacing:2px;
+    }
 
-.ticket-btn:hover{
-    background:#e4002b;
-}
-  
-.location a{
-    color: inherit;
-    text-decoration: none;
-    font-weight: bold;
-}
+    .location{
+        font-size:22px;
+    }
 
-.location a:hover{
-    text-decoration: underline;
-    cursor: pointer;
-}
+    .location small{
+        display:block;
+        color:#bbb;
+        margin-top:5px;
+    }
 
-</style>
-</head>
-<body>
-    <script>
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
+    .ticket-btn{
+        width:140px;
+        padding:10px;
+        background:transparent;
+        border:2px solid #e4002b;
+        border-radius:10px;
+        color:white;
+        font-size:18px;
+        cursor:pointer;
+    }
 
-                const target = document.querySelector(this.getAttribute('href'));
+    .ticket-btn:hover{
+        background:#e4002b;
+    }
+    
+    .location a{
+        color: inherit;
+        text-decoration: none;
+        font-weight: bold;
+    }
 
-                window.scrollTo({
-                    top: target.offsetTop - 80,
-                    behavior: 'smooth'
+    .location a:hover{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    </style>
+    </head>
+        <body>
+
+        <div class="container">
+
+            <nav>
+            
+            <div class="nav-links">
+                    <a href="#home" class="nav-link">HOME</a>
+                    <a href="#about" class="nav-link">ABOUT</a>
+                </div>
+
+                <div class="logo">
+                <img src="btslogo.png" alt="Logo">
+                </div>
+
+                <div class="nav-links">
+                    <a href="#listen" class="nav-link">LISTEN</a>
+                    <a href="#tour" class="nav-link">TOUR</a>
+                </div>
+
+            </nav>
+
+            <section id="home" class="hero">
+                <img id="cover" src="cover.png" alt="cover">
+            </section>
+
+            <section class="stream">
+
+                <h2>STREAM US ON</h2>
+
+                <div class="platforms">
+                    <p>Spotify</p>
+                    <p>Apple Music</p>
+                    <p>YouTube Music</p>
+                    <p>Amazon Music</p>
+                </div>
+
+            </section>
+
+            <section id="about" class="about">
+
+                <h2 class="section-title">ABOUT</h2>
+
+                <div class="about-content">
+
+                    <div class="about-text">
+
+                        <h1>ARIRANG by BTS</h1>
+
+                        <p>
+                            ARIRANG is the fifth full-length studio album by BTS, released on March 20, 2026. Marking the group's 
+                            highly anticipated reunion after their military service hiatus, the album blends pop, hip-hop, alternative R&B,
+                            synth-pop, EDM, and traditional Korean influences. Inspired by the iconic Korean folk song Arirang, 
+                            the album explores themes of identity, resilience, reunion, cultural heritage, fame, burnout, and personal growth. 
+                            Through its reflective lyrics and diverse musical styles, the album captures the members' experiences during their years 
+                            apart while celebrating their return as a complete group. </p>
+                        
+                        <p class= "bandlist"> The band consists of 7 members: </p>
+                        <ul>
+                            <li>RM (Kim Nam-joon)</li>
+                            <li>Jin (Kim Seok-jin)</li>
+                            <li>SUGA (Min Yoon-gi)</li>
+                            <li>J-hope (Jung Ho-seok)</li>
+                            <li>Jimin (Park Ji-min)</li>
+                            <li>V (Kim Tae-hyung)</li>
+                            <li>Jungkook (Jeon Jung-kook)</li>
+                        </ul>
+                    
+                    </div>
+
+                    <div class="vinyl">
+                        <img id="albumcover" src="vinyl.png" alt="vinyl"> 
+                    </div>
+
+                    <audio id="song">
+                        <source src="arirang.mp3" type="audio/mp3">
+                    </audio>
+
+                </div>
+
+            </section>
+
+            <section id="listen" class="listen">
+
+                <h2>LISTEN</h2>
+                    <p class="title">BTS (방탄소년단) ‘SWIM’ Official MV</p>
+
+                <div class="video">
+                    <video width="1060" height="610" controls >
+                        <source src="mv.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+            </section>
+
+            <section id="tour" class="tour">
+
+                <h2>TOUR</h2>
+
+                <div class="tour-header">
+                    <div>EVENT DATE</div>
+                    <div>LOCATION / VENUE</div>
+                    <div>BOOK NOW</div>
+                </div>
+
+                <div class="tour-row">
+
+                    <div class="date">
+                        MARCH 13,2027
+                    </div>
+
+                    <div class="location">
+                        <a href="https://www.google.com/maps/place/Philippine+Sports+Stadium/@14.7949375,120.9507344,17z/data=!3m1!4b1!4m6!3m5!1s0x3397ad9a4a861ad7:0xd539bb52352a55cf!8m2!3d14.7949375!4d120.9507344!16s%2Fm%2F0ztb799?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
+                            target="_blank">
+                                PHILIPPINES, BULACAN
+                        </a>
+                        <small>Philippine Sports Stadium</small>
+                    </div>
+                    
+                    <a href="tickets.php">
+                    <button class="ticket-btn">TICKETS</button>
+                    </a>
+
+                </div>
+
+                <div class="tour-row">
+
+                    <div class="date">
+                        MARCH 14,2027
+                    </div>
+
+                    <div class="location">
+                        <a href="https://www.google.com/maps/place/Philippine+Sports+Stadium/@14.7949375,120.9507344,17z/data=!3m1!4b1!4m6!3m5!1s0x3397ad9a4a861ad7:0xd539bb52352a55cf!8m2!3d14.7949375!4d120.9507344!16s%2Fm%2F0ztb799?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
+                            target="_blank">
+                                PHILIPPINES, BULACAN
+                        </a>
+                        <small>Philippine Sports Stadium</small>
+                    </div>
+
+                    <a href="tickets.php">
+                    <button class="ticket-btn">TICKETS</button>
+                    </a>
+
+                </div>
+
+            </section>
+
+        </div>
+
+            <script>
+                const cover = document.getElementById("albumcover");
+                const song = document.getElementById("song");
+
+                cover.addEventListener("click", function () {
+                    song.currentTime = 0;
+                    song.play();
                 });
-            });
-        });
-    </script>
+            </script>
 
-<div class="container">
-
-    <nav>
-     
-       <div class="nav-links">
-            <a href="#home" class="nav-link">HOME</a>
-            <a href="#about" class="nav-link">ABOUT</a>
-        </div>
-
-        <div class="logo">
-        <img src="btslogo.png" alt="Logo">
-        </div>
-
-        <div class="nav-links">
-            <a href="#listen" class="nav-link">LISTEN</a>
-            <a href="#tour" class="nav-link">TOUR</a>
-        </div>
-
-    </nav>
-
-    <section id="home" class="hero">
-         <img id="cover" src="cover.png" alt="cover">
-    </section>
-
-    <section class="stream">
-
-        <h2>STREAM US ON</h2>
-
-        <div class="platforms">
-            <p>Spotify</p>
-            <p>Apple Music</p>
-            <p>YouTube Music</p>
-            <p>Amazon Music</p>
-        </div>
-
-    </section>
-
-    <section id="about" class="about">
-
-        <h2 class="section-title">ABOUT</h2>
-
-        <div class="about-content">
-
-            <div class="about-text">
-
-                <h1>ARIRANG by BTS</h1>
-
-                <p>
-                    ARIRANG is the fifth full-length studio album by BTS, released on March 20, 2026. Marking the group's highly anticipated reunion after their military service hiatus, the album blends pop, hip-hop, alternative R&B, synth-pop, EDM, and traditional Korean influences. Inspired by the iconic Korean folk song Arirang, the album explores themes of identity, resilience, reunion, cultural heritage, fame, burnout, and personal growth. Through its reflective lyrics and diverse musical styles, the album captures the members' experiences during their years apart while celebrating their return as a complete group.
-                    <br>
-                    <br>
-                    The title ARIRANG carries deep cultural significance, drawing from one of Korea's most beloved folk songs, often regarded as a symbol of hope, longing, and perseverance. By embracing this title, BTS pays tribute to their roots while sharing Korean culture with a global audience. Written and produced in collaboration with renowned international and Korean musicians, the album showcases the group's artistic maturity and evolution. Widely praised for its cohesive storytelling and emotional depth, ARIRANG serves as both a heartfelt message to fans who waited for their return and a powerful statement about reconnecting with one's identity and heritage.
-                </p>
-            
-            </div>
-
-            <div class="vinyl">
-            <img src="vinyl.png" alt="vinyl">
-            </div>
-
-        </div>
-
-    </section>
-
-    <section id="listen" class="listen">
-
-        <h2>LISTEN</h2>
-            <p class="title">BTS (방탄소년단) ‘SWIM’ Official MV</p>
-
-        <div class="video">
-            <video width="1060" height="610" controls >
-                <source src="mv.mp4" type="video/mp4">
-            </video>
-        </div>
-
-    </section>
-
-    <section id="tour" class="tour">
-
-        <h2>TOUR</h2>
-
-        <div class="tour-header">
-            <div>EVENT DATE</div>
-            <div>LOCATION / VENUE</div>
-            <div>BOOK NOW</div>
-        </div>
-
-        <div class="tour-row">
-
-            <div class="date">
-                MARCH 13,2027
-            </div>
-
-            <div class="location">
-                <a href="https://www.google.com/maps/place/Philippine+Sports+Stadium/@14.7949375,120.9507344,17z/data=!3m1!4b1!4m6!3m5!1s0x3397ad9a4a861ad7:0xd539bb52352a55cf!8m2!3d14.7949375!4d120.9507344!16s%2Fm%2F0ztb799?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
-                    target="_blank">
-                        PHILIPPINES, BULACAN
-                </a>
-                <small>Philippine Sports Stadium</small>
-            </div>
-            
-            <a href="tickets.php">
-            <button class="ticket-btn">TICKETS</button>
-            </a>
-            
-        </div>
-
-        <div class="tour-row">
-
-            <div class="date">
-                MARCH 14,2027
-            </div>
-
-            <div class="location">
-                <a href="https://www.google.com/maps/place/Philippine+Sports+Stadium/@14.7949375,120.9507344,17z/data=!3m1!4b1!4m6!3m5!1s0x3397ad9a4a861ad7:0xd539bb52352a55cf!8m2!3d14.7949375!4d120.9507344!16s%2Fm%2F0ztb799?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
-                    target="_blank">
-                        PHILIPPINES, BULACAN
-                </a>
-                <small>Philippine Sports Stadium</small>
-            </div>
-
-            <a href="tickets.php">
-            <button class="ticket-btn">TICKETS</button>
-            </a>
-
-        </div>
-
-    </section>
-
-</div>
-
-</body>
+        </body>
 </html>
