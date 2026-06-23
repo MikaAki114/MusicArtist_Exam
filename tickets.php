@@ -6,7 +6,7 @@
     <title>Buy Tickets - Arirang by BTS</title>
     <style>
         * {
-            margin: 0;
+            margin: 0; 
             padding: 0;
             box-sizing: border-box;
             font-family: Arial, Helvetica, sans-serif;
@@ -17,7 +17,6 @@
             padding-top: 80px;
         }
 
-        /* Fixed Navigation Bar */
         nav {
             background: white;
             display: flex;
@@ -59,7 +58,6 @@
             object-fit: contain;
         }
 
-        /* Main Container Grid Split */
         .booking-container {
             max-width: 1250px;
             margin: 40px auto;
@@ -71,7 +69,6 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
-        /* Left Side Form Custom Panel */
         .form-panel {
             padding: 40px;
             border-right: 1px solid #ccc;
@@ -109,7 +106,6 @@
             margin-bottom: 15px;
         }
 
-        /* Data Inputs Styling */
         .input-row {
             display: flex;
             gap: 15px;
@@ -125,15 +121,12 @@
             outline: none;
         }
 
-        /* Dynamic Step 3 Output Field */
         .echo-box {
             background-color: #f9f9f9;
             font-weight: bold;
             color: #222;
-            border: 1px dashed #e4002b !important;
         }
 
-        /* Date Select Grid Buttons */
         .date-options {
             display: flex;
             gap: 15px;
@@ -172,7 +165,6 @@
             color: #e4002b;
         }
 
-        /* Purple Bundle Promo Selector Styling */
         .date-btn.both-days {
             border-color: #a82bc2;
         }
@@ -193,7 +185,6 @@
             color: white;
         }
 
-        /* Payment Form Row Options */
         .payment-options {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -219,7 +210,6 @@
             color: #e4002b;
         }
 
-        /* Review Submission Button */
         .submit-container {
             padding-left: 34px;
             margin-top: 40px;
@@ -245,7 +235,6 @@
             background: #b80022;
         }
 
-        /* Right Side Interactive Panel */
         .map-panel {
             padding: 40px;
             display: flex;
@@ -268,7 +257,6 @@
             margin-bottom: 25px;
         }
 
-        /* Precise Base Layer Container */
         .map-wrapper {
             position: relative;
             width: 100%;
@@ -276,26 +264,12 @@
             display: inline-block;
         }
 
-        /* Precise vector square outlines enclosing the text dimensions natively */
         .letter-hotspot {
             cursor: pointer;
             pointer-events: auto;
             stroke: transparent;
             stroke-width: 3px;
             transition: fill 0.2s ease, stroke 0.2s ease;
-        }
-
-        /* Hover Effect */
-        .letter-hotspot:hover {
-            fill: rgba(228, 0, 43, 0.12);
-            stroke: #e4002b;
-        }
-
-        /* Persistent Active Click Choice Selection Framing */
-        .letter-hotspot.selected {
-            fill: rgba(228, 0, 43, 0.22) !important;
-            stroke: #e4002b !important;
-            stroke-width: 4px !important;
         }
 
         .footer-note {
@@ -313,15 +287,15 @@
 
     <nav>
         <div class="nav-links">
-            <a href="index.html#home">HOME</a>
-            <a href="index.html#about">ABOUT</a>
+            <a href="index.php#about">HOME</a>
+            <a href="index.php#about">ABOUT</a>
         </div>
         <div class="logo">
             <img src="btslogo.png" alt="Logo">
         </div>
         <div class="nav-links">
-            <a href="index.html#listen">LISTEN</a>
-            <a href="index.html#tour">TOUR</a>
+            <a href="index.php#listen">LISTEN</a>
+            <a href="index.php#tour">TOUR</a>
         </div>
     </nav>
 
@@ -380,7 +354,7 @@
             </div>
 
             <div class="submit-container">
-                <input type="submit" class="review-btn" value="Review & Pay &nbsp; →">
+                <input type="submit" class="review-btn" value="PRINT RECEIPT &nbsp; →">
             </div>
         </div>
 
@@ -410,29 +384,13 @@
             const hiddenDate = document.getElementById('hidden-date');
             const hiddenPayment = document.getElementById('hidden-payment');
 
-            // 1. Map clicks selection
             letterHotspots.forEach(spot => {
                 spot.addEventListener('click', function() {
                     letterHotspots.forEach(s => s.classList.remove('selected'));
-                    this.classList.add('selected');
                     sectionEchoInput.value = this.getAttribute('data-name');
                 });
             });
 
-            // 2. Auto-sync if coming from link parameters
-            const queryDataParams = new URLSearchParams(window.location.search);
-            const initialDayValue = queryDataParams.get('day');
-            if (initialDayValue === '1') {
-                const b = document.getElementById('day1-btn');
-                b.classList.add('active');
-                hiddenDate.value = b.getAttribute('data-value');
-            } else if (initialDayValue === '2') {
-                const b = document.getElementById('day2-btn');
-                b.classList.add('active');
-                hiddenDate.value = b.getAttribute('data-value');
-            }
-
-            // Date buttons click logic
             const dateButtons = document.querySelectorAll('.date-btn');
             dateButtons.forEach(btn => {
                 btn.addEventListener('click', () => {
@@ -442,7 +400,6 @@
                 });
             });
 
-            // Payment buttons click logic
             const payButtons = document.querySelectorAll('.pay-btn');
             payButtons.forEach(btn => {
                 btn.addEventListener('click', () => {
@@ -452,20 +409,8 @@
                 });
             });
 
-            // Form Submit checking verification
-            document.getElementById('ticketForm').addEventListener('submit', function(e) {
-                if (!hiddenDate.value) {
-                    alert('Please select an attendance date.');
-                    e.preventDefault();
-                    return;
-                }
-                if (!hiddenPayment.value) {
-                    alert('Please choose a payment option.');
-                    e.preventDefault();
-                    return;
-                }
-            });
         });
+
     </script>
 </body>
-</html>
+</html> 
