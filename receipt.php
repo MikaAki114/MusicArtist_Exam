@@ -1,24 +1,3 @@
-<?php
-// Exactly matches your sample logic check block
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    $firstname = $_POST["firstname"] ?? "";
-    $lastname  = $_POST["lastname"] ?? "";
-    $date      = $_POST["date"] ?? "";
-    $section   = $_POST["section"] ?? "";
-    $payment   = $_POST["payment"] ?? "";
-
-    // Combine values cleanly
-    $fullname = trim($firstname . " " . $lastname);
-    
-    // Automatically capture system order date matching layout requirements
-    $order_date = date("n/j/y");
-
-} else {
-    echo "No data received.";
-    exit();
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,8 +6,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Receipt Confirmation - Arirang by BTS</title>
     <style>
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
             font-family: Arial, Helvetica, sans-serif;
         }
@@ -36,7 +13,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         body {
             background: #f0f2f5; 
             padding-top: 100px;
-            min-height: 100vh;
         }
 
         nav {
@@ -49,8 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 1000;
-            border-bottom: 1px solid #eaeaea;
         }
 
         .nav-links {
@@ -144,7 +118,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         .data-label {
             color: #64748b; 
-            font-weight: 500;
             text-align: left;
         }
 
@@ -156,18 +129,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </style>
 </head>
 <body>
+        <?php
 
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+            $firstname = $_POST["firstname"];
+            $lastname  = $_POST["lastname"];
+            $date      = $_POST["date"];
+            $section   = $_POST["section"];
+            $payment   = $_POST["payment"];
+
+            $fullname = trim($firstname . " " . $lastname);
+            
+            $order_date = date("n/j/y");
+
+        } else {
+            echo "No data received.";
+            exit();
+        }
+        ?>
+        
     <nav>
         <div class="nav-links">
-            <a href="index.html#home">HOME</a>
-            <a href="index.html#about">ABOUT</a>
+            <a href="index.php#home">HOME</a>
+            <a href="index.php#about">ABOUT</a>
         </div>
         <div class="logo">
             <img src="btslogo.png" alt="Logo">
         </div>
         <div class="nav-links">
-            <a href="index.html#listen">LISTEN</a>
-            <a href="index.html#tour">TOUR</a>
+            <a href="index.php#listen">LISTEN</a>
+            <a href="index.php#tour">TOUR</a>
         </div>
     </nav>
 
@@ -190,7 +182,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             <div class="data-row">
-                <div class="data-label">Event Name</div>
+                <div class="data-label">Event Name/Seat Section</div>
                 <div class="data-value">BTS Arirang Tour (<?php echo htmlspecialchars($section); ?>)</div>
             </div>
 
@@ -206,7 +198,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <div class="data-row">
                 <div class="data-label">Order Date</div>
-                <div class="data-value"><?php echo htmlspecialchars($order_date); ?></div>
+                <div class="data-value"><?php echo htmlspecialchars($order_date); ?> </div>
             </div>
 
         </div>
